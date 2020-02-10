@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Phone Manager',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -25,34 +26,39 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _currentindex = 0;
+  int _currentTab = 0;
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.indigo[600],
         title: Text(
-          'Phone Master',
+          'Phone Manager',
           style: TextStyle(color: Colors.white),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.start,
+         
           children: <Widget>[
             Container(
               width: 500,
-              height: 200,
-              color: Colors.blue,
+              height: 250,
+              color: Colors.indigo[600],
               child: Column(
                 children: <Widget>[
-                  // Image.asset(null),
+                   Container(
+                     width: 120,
+                     height: 120,
+                     child: Image.asset('assets/images/password.png', fit: BoxFit.contain,)),
+                 SizedBox(height: 10,),
                   Text(
                     'Set cellular plan to control your mobile data',
                     style: TextStyle(color: Colors.white),
                   ),
+                  SizedBox(height: 10,),
                   RaisedButton(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -61,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: null,
                       child: Text(
                         'SET NOW',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.white),
                       ))
                 ],
               ),
@@ -76,11 +82,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: <Widget>[
                         Icon(
                           Icons.restore_from_trash,
-                          color: Colors.blue,
+                          color: Colors.indigo[600],
                         ),
                         Text('Junk Files'),
                         SizedBox(height: 40),
-                        Icon(Icons.data_usage, color: Colors.blue),
+                        Icon(Icons.data_usage, color:Colors.indigo[600]),
                         Text('Data Manager'),
                       ],
                     ),
@@ -92,10 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: <Widget>[
-                        Icon(Icons.brightness_low, color: Colors.blue),
+                        Icon(Icons.brightness_low, color: Colors.indigo[600]),
                         Text('Cpu Cooler'),
                         SizedBox(height: 40),
-                        Icon(Icons.battery_charging_full, color: Colors.blue),
+                        Icon(Icons.battery_charging_full, color: Colors.indigo[600]),
                         Text('Power Saving'),
                       ],
                     ),
@@ -107,10 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: <Widget>[
-                        Icon(Icons.phone_android, color: Colors.blue),
+                        Icon(Icons.phone_android, color: Colors.indigo[600]),
                         Text('Phone Boost'),
                         SizedBox(height: 40),
-                        Icon(Icons.lock, color: Colors.blue),
+                        Icon(Icons.lock, color: Colors.indigo[600]),
                         Text('App Lock'),
                       ],
                     ),
@@ -177,10 +183,10 @@ class _MyHomePageState extends State<MyHomePage> {
         
       ),
       bottomNavigationBar: CupertinoTabBar(
-          currentIndex: _currentindex,
-          onTap: (index) {
+          currentIndex: _currentTab,
+          onTap: (int index) {
             setState(() {
-              _currentindex = index;
+              _currentTab = index;
             });
           },
           activeColor: Colors.blue,
