@@ -19,20 +19,20 @@ class ToolBox extends StatelessWidget {
           SizedBox(height: 10,),
           ListTile(
                   leading: Icon(
-                    Icons.games,
-                    color: Colors.green,
+                    Icons.brush,
+                    color: Colors.blue,
                   ),
-                  title: Text('Game mode'),
+                  title: Text('Deep Clean'),
                   subtitle:
-                      Text('improve game experience via system optimization'),
+                      Text('Clean up files deeply to release more space'),
                 ),
                 Divider(),
           ListTile(
                   leading: Icon(
-                    Icons.games,
-                    color: Colors.green,
+                    Icons.notifications,
+                    color: Colors.red,
                   ),
-                  title: Text('Game mode'),
+                  title: Text('Notification Management'),
                   subtitle:
                       Text('improve game experience via system optimization'),
                 ),
